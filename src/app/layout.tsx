@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Banner from "@/components/Banner";
 // Design system fonts (Figma spec): Display (Caprasimo) + Outfit (weights 400/500/700)
 const displayFont = Caprasimo({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
   <html lang="en">
 	<body className={`${displayFont.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans bg-white text-zinc-900`}>
+  <Banner />
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
