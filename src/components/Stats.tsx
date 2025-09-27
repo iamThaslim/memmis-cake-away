@@ -75,7 +75,7 @@ export default function Stats() {
         </div>
 
         <dl className="mt-16 grid grid-cols-1 overflow-hidden rounded-2xl text-center shadow-sm ring-1 ring-zinc-200 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, _i) => (
+          {stats.map((stat) => (
             <div
               key={stat.id}
               className="flex flex-col gap-2 bg-gradient-to-b from-white to-zinc-50 p-8 even:bg-white/80 lg:gap-3"

@@ -35,9 +35,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <html lang="en">
-	<body className={`${displayFont.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans bg-white text-zinc-900`}>
-  <Banner />
+    <html lang="en">
+      <body className={`${displayFont.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans bg-white text-zinc-900`}>
+        <Banner />
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />

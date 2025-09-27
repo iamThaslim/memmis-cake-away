@@ -64,11 +64,11 @@ export default function Features() {
                   key={feature.name}
                   className={`flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-10 ${reverse ? 'lg:[&>div:first-child]order-none' : ''}`}
                 >
-                  <div className={`mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4 ${reverse ? 'lg:order-2' : ''}`}> 
+                  <div className={`mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4 ${reverse ? 'lg:order-2' : ''}`}>
                     <h3 className="text-lg font-semibold text-zinc-900">{feature.name}</h3>
                     <p className="mt-2 text-sm text-zinc-600 leading-relaxed">{feature.description}</p>
                   </div>
-                  <div className={`flex-auto lg:col-span-7 xl:col-span-8 ${reverse ? 'lg:order-1' : ''}`}> 
+                  <div className={`flex-auto lg:col-span-7 xl:col-span-8 ${reverse ? 'lg:order-1' : ''}`}>
                     <div className="relative aspect-[5/2] w-full overflow-hidden rounded-lg bg-zinc-100">
                       <Image
                         alt={feature.alt}

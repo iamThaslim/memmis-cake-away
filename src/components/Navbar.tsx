@@ -111,7 +111,7 @@ export default function Navbar() {
 				ref={menuRef}
 				id="mobile-menu"
 				className={cn(
-					"md:hidden overflow-hidden border-b border-[--color-border] bg-white shadow-sm transition-[max-height,opacity] duration-300 ease-out", 
+					"md:hidden overflow-hidden border-b border-[--color-border] bg-white shadow-sm transition-[max-height,opacity] duration-300 ease-out",
 					open ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
 				)}
 			>
@@ -122,10 +122,10 @@ export default function Navbar() {
 							<Link
 								key={item.href}
 								href={item.href}
-								className={cn(
-									"block rounded-md px-3 py-2 text-base font-medium transition-colors", 
-									active ? "bg-teal-50 text-teal-700" : "text-zinc-700 hover:bg-zinc-50 hover:text-teal-600"
-								)}
+									className={cn(
+										"block rounded-md px-3 py-2 text-base font-medium transition-colors",
+										active ? "bg-teal-50 text-teal-700" : "text-zinc-700 hover:bg-zinc-50 hover:text-teal-600"
+									)}
 							>
 								{item.name}
 							</Link>

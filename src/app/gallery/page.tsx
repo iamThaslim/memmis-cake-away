@@ -2,7 +2,6 @@ import Image from "next/image";
 import Reviews from "@/components/Reviews";
 import type { Metadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "Gallery",
   description: "Browse a curated selection of custom cakes crafted by hand—character themes, celebrations and more.",
