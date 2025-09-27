@@ -48,7 +48,7 @@ export default function Navbar() {
 					style={{ fontFamily: 'var(--font-display)' }}
 				>
 					<span className="text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400">
-						Memmis Cake
+						Memmis Cake Away
 					</span>
 				</Link>
 
