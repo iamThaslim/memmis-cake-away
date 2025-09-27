@@ -1,15 +1,17 @@
+
+
 import Hero from "@/components/Hero";
-import WhoWeAre from "@/components/WhoWeAre";
+import Stats from "@/components/Stats";
 import Categories from "@/components/Categories";
-import WhatWeDoSection from "@/components/WhatWeDoSection";
+import Features from "@/components/Features";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
-  <WhoWeAre />
-  <Categories />
-  <WhatWeDoSection />
-    </>
+      <Stats />
+      <Categories />
+      <Features />
+    </main>
   );
 }
