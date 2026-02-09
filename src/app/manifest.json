@@ -1,17 +1,17 @@
 {
-  "name": "Bistro - Restaurant Landing Page | Shadcn Studio",
-  "short_name": "Bistro",
-  "description": "Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.",
+  "name": "Ink - Blog Landing Page | Shadcn Studio",
+  "short_name": "Ink - Blog Landing Page",
+  "description": "Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#fff6f5",
-  "theme_color": "#d40c1a",
+  "background_color": "#eaedf8",
+  "theme_color": "#111826",
   "orientation": "portrait-primary",
   "categories": [
-    "productivity",
-    "business",
-    "development"
+    "news",
+    "education",
+    "education"
   ],
   "icons": [
     {

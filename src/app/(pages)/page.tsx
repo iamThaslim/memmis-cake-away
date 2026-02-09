@@ -1,18 +1,8 @@
-import HeroSectionPage from '@/components/blocks/hero-section/hero-section'
-import PopularDishes from '@/components/blocks/popular-dishes/popular-dishes'
-import AboutUs from '@/components/blocks/about-us-section/about-us-page'
-import Testimonials from '@/components/blocks/testimonials-section/testimonials-section'
-import NewItems from '@/components/blocks/new-items-section/new-items'
-import ContactUs from '@/components/blocks/contact-us-section/contact-us-page'
-import Offers from '@/components/blocks/offers-section/offers-section'
+import { blogPosts } from '@/assets/data/blog-posts'
 
-import { menudata } from '@/assets/data/hero'
-import { popularDishes } from '@/assets/data/popular-dishes'
-import { stats } from '@/assets/data/about-us'
-import { testimonials } from '@/assets/data/testimonials'
-import { newItems } from '@/assets/data/new-items'
-import { contactInfo } from '@/assets/data/contact-us'
-import { GalleryImage } from '@/assets/data/offers'
+import HeroSection from '@/components/blocks/hero-section/hero-section'
+import Blog from '@/components/blocks/blog-component/blog-component'
+import CTA from '@/components/blocks/cta-section/cta-section'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -21,9 +11,9 @@ const jsonLd = {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`,
-      name: 'Bistro',
+      name: 'Ink - Blog Landing Page',
       description:
-        'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.',
+        'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.',
       url: `${process.env.NEXT_PUBLIC_APP_URL}`,
       inLanguage: 'en-US'
     }
@@ -32,14 +22,10 @@ const jsonLd = {
 
 const Home = () => {
   return (
-    <>
-      <HeroSectionPage menudata={menudata} />
-      <PopularDishes popularDishes={popularDishes} />
-      <AboutUs stats={stats} />
-      <Testimonials testimonials={testimonials} />
-      <NewItems newItems={newItems} />
-      <ContactUs contactInfo={contactInfo} />
-      <Offers galleryImage={GalleryImage} />
+    <div>
+      <HeroSection blogData={blogPosts} />
+      <Blog />
+      <CTA />
       {/* Add JSON-LD to your page */}
       <script
         type='application/ld+json'
@@ -47,7 +33,7 @@ const Home = () => {
           __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c')
         }}
       />
-    </>
+    </div>
   )
 }
 

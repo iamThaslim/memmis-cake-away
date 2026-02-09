@@ -3,6 +3,7 @@
 import type { ReactNode } from 'react'
 
 import { ChevronRightIcon, CircleSmallIcon } from 'lucide-react'
+
 import Link from 'next/link'
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
@@ -14,7 +15,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
-import { cn, scrollToSection } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 
 export type NavigationItem = {
   title: string
@@ -46,27 +47,16 @@ const MenuDropdown = ({ trigger, navigationData, activeSection, align = 'start' 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>{trigger}</DropdownMenuTrigger>
-      <DropdownMenuContent className='mt-1 w-[min(93vw,800px)]' align={align}>
+      <DropdownMenuContent className='w-56' align={align}>
         {navigationData.map(navItem => {
           if (navItem.href) {
-            // Extract section ID from href
-            const sectionId = navItem.href.replace('#', '')
-            const isActive = activeSection === sectionId && activeSection !== ''
+            // Extract section ID from href (e.g., "/#categories" -> "categories", "/#" -> "home")
+            const sectionFromHref = navItem.href === '/#' ? 'home' : navItem.href.replace('/#', '')
+            const isActive = sectionFromHref === activeSection
 
             return (
               <DropdownMenuItem key={navItem.title} asChild>
-                <Link
-                  href={navItem.href}
-                  onClick={e => {
-                    e.preventDefault()
-                    scrollToSection(sectionId)
-                  }}
-                  className={cn(
-                    'cursor-pointer transition-colors duration-200',
-                    'hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary',
-                    isActive ? 'bg-primary/10 text-primary font-medium' : 'text-foreground'
-                  )}
-                >
+                <Link href={navItem.href} className={cn(isActive && 'bg-accent text-accent-foreground font-medium')}>
                   {navItem.icon}
                   {navItem.title}
                 </Link>
