@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { Inter, Source_Serif_4, IBM_Plex_Mono } from 'next/font/google'
+import { Geist_Mono, Merriweather, Outfit, Kaushan_Script } from 'next/font/google'
 import type { Metadata } from 'next'
 
 import { ThemeProvider } from '@/components/theme-provider'
@@ -9,31 +9,36 @@ import { cn } from '@/lib/utils'
 
 import './globals.css'
 
-const inter = Inter({
-  variable: '--font-inter',
+const outfitSans = Outfit({
+  variable: '--font-outfit-sans',
   subsets: ['latin']
 })
 
-const sourceSerif4 = Source_Serif_4({
-  variable: '--font-source-serif-4',
+const merriweatherSerif = Merriweather({
+  variable: '--font-merriweather-serif',
   subsets: ['latin']
 })
 
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: '--font-ibm-plex-mono',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700']
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin']
+})
+
+const kaushanScript = Kaushan_Script({
+  weight: '400',
+  variable: '--font-kaushan-script',
+  subsets: ['latin']
 })
 
 export const metadata: Metadata = {
   title: {
-    template: 'Demo: %s - Ink | Shadcn Studio',
-    default: 'Demo: Ink - Blog Landing Page | Shadcn Studio'
+    template: 'Demo: %s - Bistro | Shadcn Studio',
+    default: 'Demo: Bistro - Restaurant Landing Page | Shadcn Studio'
   },
   description:
-    'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.',
+    'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.',
   robots: 'index,follow',
-  keywords: ['Ink Landing Page', 'creative template', 'modern design', 'showcase projects'],
+  keywords: ['Restaurant', 'Dining', 'Food'],
   icons: {
     icon: [
       {
@@ -77,32 +82,32 @@ export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`),
   openGraph: {
     title: {
-      template: 'Demo: %s - Ink | Shadcn Studio',
-      default: 'Demo: Ink - Blog Landing Page | Shadcn Studio'
+      template: 'Demo: %s - Bistro | Shadcn Studio',
+      default: 'Demo: Bistro - Restaurant Landing Page | Shadcn Studio'
     },
     description:
-      'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.',
+      'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.',
     type: 'website',
-    siteName: 'Ink - Blog Landing Page',
+    siteName: 'Bistro',
     url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`,
     images: [
       {
-        url: '/images/og-image.webp',
+        url: '/images/og-image.png',
         type: 'image/png',
         width: 1200,
         height: 630,
-        alt: 'Ink - Blog Landing Page | Shadcn Studio'
+        alt: 'Template Slogan'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
     title: {
-      template: 'Demo: %s - Ink | Shadcn Studio',
-      default: 'Demo: Ink - Blog Landing Page | Shadcn Studio'
+      template: 'Demo: %s - Bistro | Shadcn Studio',
+      default: 'Demo: Bistro - Restaurant Landing Page | Shadcn Studio'
     },
     description:
-      'Ink is a free Shadcn UI Blog Landing Page template to publish articles, insights, and categories with a clean, fast, and readable layout.'
+      'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.'
   }
 }
 
@@ -111,9 +116,10 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
     <html
       lang='en'
       className={cn(
-        inter.variable,
-        sourceSerif4.variable,
-        ibmPlexMono.variable,
+        outfitSans.variable,
+        merriweatherSerif.variable,
+        geistMono.variable,
+        kaushanScript.variable,
         'flex min-h-full w-full scroll-smooth antialiased'
       )}
       suppressHydrationWarning
