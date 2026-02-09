@@ -1,7 +1,6 @@
 import Image from "next/image";
-import type { Metadata } from "next";
 import Reviews from "@/components/Reviews";
-
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Gallery",

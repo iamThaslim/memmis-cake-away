@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+// import { useInView } from "framer-motion";
 
 type Stat = {
   id: number;
@@ -19,36 +19,36 @@ const stats: Stat[] = [
 function AnimatedNumber({ value, suffix }: { value: number; suffix?: string }) {
   const spanRef = useRef<HTMLSpanElement | null>(null);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(wrapperRef, { once: true, margin: "0px 0px -60px 0px" });
+  // const inView = useInView(wrapperRef, { once: true, margin: "0px 0px -60px 0px" });
   const [done, setDone] = useState(false);
 
-  useEffect(() => {
-    if (!inView || done) {
-      return;
-    }
-    let start: number | null = null;
-    const duration = 1400; // ms
-    const startVal = 0;
-    const diff = value - startVal;
+  // useEffect(() => {
+  //   if (!inView || done) {
+  //     return;
+  //   }
+  //   let start: number | null = null;
+  //   const duration = 1400; // ms
+  //   const startVal = 0;
+  //   const diff = value - startVal;
 
-    function step(ts: number) {
-      if (start === null) {
-        start = ts;
-      }
-      const progress = Math.min(1, (ts - start) / duration);
-      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-      const current = Math.round(startVal + diff * eased);
-      if (spanRef.current) {
-        spanRef.current.textContent = current.toString();
-      }
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        setDone(true);
-      }
-    }
-    requestAnimationFrame(step);
-  }, [inView, done, value]);
+  //   function step(ts: number) {
+  //     if (start === null) {
+  //       start = ts;
+  //     }
+  //     const progress = Math.min(1, (ts - start) / duration);
+  //     const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+  //     const current = Math.round(startVal + diff * eased);
+  //     if (spanRef.current) {
+  //       spanRef.current.textContent = current.toString();
+  //     }
+  //     if (progress < 1) {
+  //       requestAnimationFrame(step);
+  //     } else {
+  //       setDone(true);
+  //     }
+  //   }
+  //   requestAnimationFrame(step);
+  // }, [inView, done, value]);
 
   return (
     <div ref={wrapperRef} className="inline-flex items-baseline justify-center">
